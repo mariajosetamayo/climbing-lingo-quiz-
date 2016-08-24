@@ -1,5 +1,10 @@
 body{
-	font-family: 'Archivo Narrow', sans-serif;
+
+	font-family: 'lato', sans-serif;
+	font-weight: bold;
+	background-image: url("yosemite3.png");
+	background-repeat: no-repeat;
+	color: white;
 }
 
 header{
@@ -7,27 +12,39 @@ header{
     margin-top: 160px;
 }
 
+
 .title{
-	font-size: 80px;
+	font-size: 90px;
+	font-weight: 900;
+	text-shadow: 2px 2px grey;
 }
 
 .quiz{
 	text-align: center;
+	/*background-color: white;*/
+	/*opacity: 0.5;*/
 }
 
 #description{
-	font-size: 40px;
+	font-size: 35px;
+	text-shadow: 2px 2px grey;
 }
 
-/*#startQuiz{
-	border-radius: 10px;
-    font-size: 40px;
-    width: 155px;
-}*/
 .startButton{
 	border-radius: 10px;
     font-size: 40px;
     width: 155px;
+    margin-bottom: 35px;
+    background-color:  #3B5998;
+    color: white;
+    font-family: "Maven Pro", sans-serif;
+
+}
+
+.startButton:hover{
+	background-color: #41CF4D;
+	width: 300px;
+	transition: 0.5s;
 }
 
 .submitAnswer{
@@ -37,8 +54,10 @@ header{
     display: none;
 }
 
-.question{
-	font-size: 30px;
+#question{
+	font-size: 40px;
+	padding-top: 15px;
+	font-weight: 900;
 }
 
 .answers{
@@ -47,6 +66,51 @@ header{
 
 #questionContainer{
 	font-size: 25px;
+	background-color: white;
+	opacity: 0.8;
+	color: black;
+	height: 450px;
+	/*font-family: "Archivo Narrow", sans-serif;*/
+
+}
+
+#nextButton{
+	font-size: 25px;
+	border-radius: 10px;
+	width: 120px;
+	font-family: "Maven Pro", sans-serif;
+	background-color:  #3B5998;
+    color: white;
+}
+
+#resultButton:hover, #newQuiz:hover, #nextButton:hover{
+	background-color: #41CF4D;
+	/*width: 350px;*/
+}
+
+
+#resultButton, #newQuiz{
+	font-size: 25px;
+	border-radius: 10px;
+	width: 226px;
+	font-family: "Maven Pro", sans-serif;
+	background-color:  #3B5998;
+    color: white;
+}
+
+#results{
+	font-size: 25px;
+	background-color: white;
+	color: black;
+}
+
+h3{
+	padding-top: 15px;
+}
+
+
+.tally{
+	text-shadow: 2px 2px grey;
 }
 
 #questionContainer, #resultButton, .tally, .climbingRookie, .gymRat, .ocassional, .master, #newQuiz{
@@ -54,12 +118,3 @@ header{
 }
 
 
-
-
-
-
-/*.questionContainer{
-	height: 100px;
-	width: 30%;
-	background-color: blue;
-}*/
