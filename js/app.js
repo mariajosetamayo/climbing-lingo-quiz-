@@ -63,17 +63,17 @@ $(document).ready(function(){
 	var quiz = nextQuestion()
 
 	$("#newQuiz").click(function(){
-		quiz = nextQuestion()
+		$("#results").hide()
+		$(".startButton").show()
 		counter = 0
 		currentAnswerPoints = 0
 		totalPoints = 0
-
+		quiz = nextQuestion()
 	})
 
 	
-
 	function nextQuestion () {
-
+		
 		$('input[name=option]').attr('checked',false);
 		document.getElementById("count").innerHTML = counter + 1
 		totalPoints = totalPoints + currentAnswerPoints
@@ -81,67 +81,80 @@ $(document).ready(function(){
 		document.getElementById("score").innerHTML = totalPoints
 		var presentQuestion = new Question (questions[counter], options[counter], answers[counter])
 		console.log("question number", presentQuestion)
+		if(counter <10){
+			document.getElementById("question").innerHTML = presentQuestion.question
+			document.getElementById("option0text").innerHTML = presentQuestion.options[0]
+			document.getElementById("option1text").innerHTML = presentQuestion.options[1]
+			document.getElementById("option2text").innerHTML = presentQuestion.options[2]
+			document.getElementById("option3text").innerHTML = presentQuestion.options[3]
+		
+			document.getElementById("option0").onclick = function () {
+				currentAnswerPoints = 0
+				console.log("NOOOOOO", currentAnswerPoints)
+			}
+			document.getElementById("option1").onclick = function () {
+				currentAnswerPoints = 0
+				console.log("NOOOOOO", currentAnswerPoints)
+			}
+			document.getElementById("option2").onclick = function () {
+				currentAnswerPoints = 0
+				console.log("NOOOOOO", currentAnswerPoints)
+			}
+			document.getElementById("option3").onclick = function () {
+				currentAnswerPoints = 0
+				console.log("NOOOOOO", currentAnswerPoints)
+			}
+			document.getElementById("option" + presentQuestion.answer).onclick = function () {
+				currentAnswerPoints = 1
+				console.log("YIEH BOIII", currentAnswerPoints)
+			}
+		}
+		
 
-		document.getElementById("question").innerHTML = presentQuestion.question
-		document.getElementById("option0text").innerHTML = presentQuestion.options[0]
-		document.getElementById("option1text").innerHTML = presentQuestion.options[1]
-		document.getElementById("option2text").innerHTML = presentQuestion.options[2]
-		document.getElementById("option3text").innerHTML = presentQuestion.options[3]
-
-		document.getElementById("option0").onclick = function () {
-			currentAnswerPoints = 0
-			console.log("NOOOOOO", currentAnswerPoints)
-		}
-		document.getElementById("option1").onclick = function () {
-			currentAnswerPoints = 0
-			console.log("NOOOOOO", currentAnswerPoints)
-		}
-		document.getElementById("option2").onclick = function () {
-			currentAnswerPoints = 0
-			console.log("NOOOOOO", currentAnswerPoints)
-		}
-		document.getElementById("option3").onclick = function () {
-			currentAnswerPoints = 0
-			console.log("NOOOOOO", currentAnswerPoints)
-		}
-		document.getElementById("option" + presentQuestion.answer).onclick = function () {
-			currentAnswerPoints = 1
-			console.log("YIEH BOIII", currentAnswerPoints)
+		else if (counter === 10){
+			$("#results").hide()
+			$("#resultButton").toggle();
+			$("#questionContainer").hide();
+			$(".tally").hide();
 		}
 
-		// document.getElementById("option0").value = 0
-		// document.getElementById("option1").value = 0
-		// document.getElementById("option2").value = 0
-		// document.getElementById("option3").value = 0
-		// document.getElementById("option" + presentQuestion.answer).value = 1
+		
+
 		counter++
-
-		if (counter === 10){
-				$("#resultButton").toggle();
-				$("#questionContainer").hide();
-				$(".tally").hide();
-			}
-
-		document.getElementById("resultButton").onclick = function (){
-			$("#resultButton").hide();
-			$("#newQuiz").show(); 
-			if (totalPoints<=2){
-				$(".climbingRookie").toggle()
-			} 
-			else if (totalPoints >2 && totalPoints <= 3){
-				$(".gymRat").toggle()
-			}
-			else if (totalPoints >3 && totalPoints <= 6){
-				$(".ocassional").toggle()
-			}
-			else {
-				$(".master").toggle()
-			}
-		}
 
 	}
 
-	nextQuestion()
+	document.getElementById("resultButton").onclick = function (){
+		$("#results").show()
+		$("#resultButton").hide();
+		$("#newQuiz").show(); 
+		if (totalPoints<=2){
+			$(".climbingRookie").show()
+			$(".gymRat").hide()
+			$(".master").hide()
+			$(".ocassional").hide()
+		} 
+		else if (totalPoints >2 && totalPoints <= 3){
+			$(".gymRat").show()
+			$(".climbingRookie").hide()
+			$(".master").hide()
+			$(".ocassional").hide()
+		}
+		else if (totalPoints >3 && totalPoints <= 6){
+			$(".ocassional").show()
+			$(".climbingRookie").hide()
+			$(".gymRat").hide()
+			$(".master").hide()
+		}
+		else {
+			$(".master").show()
+			$(".climbingRookie").hide()
+			$(".gymRat").hide()
+			$(".ocassional").hide()
+		}
+	}
+
+
 
 
 	// $("#resultButton").click(function(){

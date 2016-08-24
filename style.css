@@ -4,8 +4,11 @@ body{
 
 header{
 	text-align: center;
-	font-size: 30px;
     margin-top: 160px;
+}
+
+.title{
+	font-size: 80px;
 }
 
 .quiz{
@@ -13,7 +16,7 @@ header{
 }
 
 #description{
-	font-size: 30px;
+	font-size: 40px;
 }
 
 /*#startQuiz{
@@ -40,6 +43,10 @@ header{
 
 .answers{
 	font-size: 20px;
+}
+
+#questionContainer{
+	font-size: 25px;
 }
 
 #questionContainer, #resultButton, .tally, .climbingRookie, .gymRat, .ocassional, .master, #newQuiz{
