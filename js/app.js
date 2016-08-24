@@ -25,15 +25,15 @@ $(document).ready(function(){
 	//   array of option answers
 
 	var options = [
-		["An easy climb", "A horrendously hard climb", "A climb which receives a much lower grade than deserved", "A climb which receives a much higher grade than deserved"],["the end of a very long climb","the hardest part of a climb","the easiest part of a climb", "the part where you were stronger in the climb"],
-		["to climb without a rope","Climbing without unnatural aids other than used for protection","Climbing a route alone with an auto-belay","Climbing without natural aids used for protection"],
-		["a horrendously small and slippery hold" ,"A very large hold that you can grab easily", "A hold which is only just big enough to be grasped with the tips of the fingers", "A rounded and slippery hold"],
-		["to successfully complete a climbing route without falling on the first attempt after receiving beta of some form", "To fall off a climbing route too quickly", "to successfully complete a route without falling", "To complete a climbing route very quickly"],
-		["requesting the belayer to go back down","requesting the belayer to give them more slack", "requesting to take a break", "requesting that the belayer removes all slack"],
-		["completing a climb successfully without falling while on a top rope after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a climb while placing protection on a lead climb after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a lead climb after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a lead climb on the first attempt without falling"],
-		["Climbing technique where a leg is held in a position to maintain balance, rather than to support weight", "a technique to barndoor and climb more dynamically","a technique to prepare yourself for jumping onto another hold","To use friction on the sole of the climbing shoe, in the absence of any useful footholds"],
+		["An easy climb", "A horrendously hard climb", "A climb which receives a much lower grade than deserved", "A climb which receives a much higher grade than deserved"],["The end of a very long climb","The hardest part of a climb","The easiest part of a climb", "The part where you were stronger in the climb"],
+		["To climb without a rope","Climbing without unnatural aids other than used for protection","Climbing a route alone with an auto-belay","Climbing without natural aids used for protection"],
+		["A horrendously small and slippery hold" ,"A very large hold that you can grab easily", "A hold which is only just big enough to be grasped with the tips of the fingers", "A rounded and slippery hold"],
+		["To successfully complete a climbing route without falling on the first attempt after receiving beta of some form", "To fall off a climbing route too quickly", "To successfully complete a route without falling", "To complete a climbing route very quickly"],
+		["Requesting the belayer to go back down","Requesting the belayer to give them more slack", "Requesting to take a break", "Requesting that the belayer removes all slack"],
+		["Completing a climb successfully without falling while on a top rope after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a climb while placing protection on a lead climb after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a lead climb after making previous unsuccessful attempts, done without falling or resting on the rope","To complete a lead climb on the first attempt without falling"],
+		["Climbing technique where a leg is held in a position to maintain balance, rather than to support weight", "A technique to barndoor and climb more dynamically","A technique to prepare yourself for jumping onto another hold","To use friction on the sole of the climbing shoe, in the absence of any useful footholds"],
 		["Jumping from the highest part of a boulder problem to the ground", "A technique that is typically used while lowering and cleaning gear from an overhanging and/or traversing route", "Jumping or transitioning from rock to rock in an area of large rock fragments on a mountainside that may vary from house-size to as small as a small backpack", "Scrambling to get to the top of an oddly shaped boulder"],
-		["When the rope slashes a part of your body",  "falling to the ground while leading", "Getting rope burnt", "any fall beyond the last placed or clipped piece of protection"]
+		["When the rope slashes a part of your body",  "Falling to the ground while leading", "Getting rope burnt", "Any fall beyond the last placed or clipped piece of protection"]
 	]
 
 	// variable for correct answer's array index
@@ -52,16 +52,15 @@ $(document).ready(function(){
 	var currentAnswerPoints = 0
 	var totalPoints = 0
 
-
-	function onClickOption (obj) {
-		console.log(obj)
-	}
+	// <--* button that runs the function for next question upon click *-->
 
 	document.getElementById("nextButton").onclick = function () {
 		nextQuestion()
 	}
 
 	var quiz = nextQuestion()
+
+	//<--* function to repeat the quiz after clicking the button newQuiz *-->
 
 	$("#newQuiz").click(function(){
 		$("#results").hide()
@@ -81,8 +80,11 @@ $(document).ready(function(){
 		currentAnswerPoints = 0
 		document.getElementById("score").innerHTML = totalPoints
 		var presentQuestion = new Question (questions[counter], options[counter], answers[counter])
-		console.log("question number", presentQuestion)
+		// console.log("question number", presentQuestion)
 		
+		//<---** if statement makes code run until it reaches the 10th question, when it reaches 10, it shows results button **--->
+
+
 		if(counter <10){
 			document.getElementById("question").innerHTML = presentQuestion.question
 			document.getElementById("option0text").innerHTML = presentQuestion.options[0]
@@ -92,23 +94,26 @@ $(document).ready(function(){
 		
 			document.getElementById("option0").onclick = function () {
 				currentAnswerPoints = 0
-				console.log("NOOOOOO", currentAnswerPoints)
+				// console.log("NOOOOOO", currentAnswerPoints)
 			}
 			document.getElementById("option1").onclick = function () {
 				currentAnswerPoints = 0
-				console.log("NOOOOOO", currentAnswerPoints)
+				// console.log("NOOOOOO", currentAnswerPoints)
 			}
 			document.getElementById("option2").onclick = function () {
 				currentAnswerPoints = 0
-				console.log("NOOOOOO", currentAnswerPoints)
+				// console.log("NOOOOOO", currentAnswerPoints)
 			}
 			document.getElementById("option3").onclick = function () {
 				currentAnswerPoints = 0
-				console.log("NOOOOOO", currentAnswerPoints)
+				// console.log("NOOOOOO", currentAnswerPoints)
 			}
+			
+			// this part of the function evaluates if user gets question correct. It concatenates the word option with the answer to the current question (which is the array index position)
+			
 			document.getElementById("option" + presentQuestion.answer).onclick = function () {
 				currentAnswerPoints = 1
-				console.log("YIEH BOIII", currentAnswerPoints)
+				// console.log("YIEH BOIII", currentAnswerPoints)
 			}
 		}
 		
@@ -125,6 +130,8 @@ $(document).ready(function(){
 		counter++
 
 	}
+
+	//<--* function to get the results according to score *-->
 
 	document.getElementById("resultButton").onclick = function (){
 		$("#results").show()
