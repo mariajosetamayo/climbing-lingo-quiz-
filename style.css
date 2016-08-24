@@ -1,0 +1,58 @@
+body{
+	font-family: 'Archivo Narrow', sans-serif;
+}
+
+header{
+	text-align: center;
+	font-size: 30px;
+    margin-top: 160px;
+}
+
+.quiz{
+	text-align: center;
+}
+
+#description{
+	font-size: 30px;
+}
+
+/*#startQuiz{
+	border-radius: 10px;
+    font-size: 40px;
+    width: 155px;
+}*/
+.startButton{
+	border-radius: 10px;
+    font-size: 40px;
+    width: 155px;
+}
+
+.submitAnswer{
+	border-radius: 10px;
+    font-size: 20px;
+    width: 155px;
+    display: none;
+}
+
+.question{
+	font-size: 30px;
+}
+
+.answers{
+	font-size: 20px;
+}
+
+#questionContainer, #resultButton, .tally, .climbingRookie, .gymRat, .ocassional, .master, #newQuiz{
+	display: none;
+}
+
+
+
+
+
+
+/*.questionContainer{
+	height: 100px;
+	width: 30%;
+	background-color: blue;
+}*/

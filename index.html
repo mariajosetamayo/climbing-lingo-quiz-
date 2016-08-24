@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>quizApp</title>
+	<!-- Meta Tags -->
+		<meta charset="utf-8"/>
+		<!-- Stylesheets -->
+		<!-- <link rel="stylesheet" href="styles/reset.css"> -->
+		<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+		<link rel="stylesheet" href="style.css"/> 
+
+</head>
+<body>
+	<header> <!--Header -->
+
+			<!-- logo text -->
+			<h1>The Ultimate Climbing Lingo Quiz</h1>
+
+		</header>
+
+		<section class="quiz"> <!-- Quiz description ans start section  -->
+			
+			<h2 id="description">Are you a climbing rookie, a gym rat, an ocassional climber or a stone master?</h2>
+			<p id="description">Find out according to your knowledge of climbing lingo.</p>
+
+			<button class="startButton">Start</button>
+
+			
+		<div id="questionContainer">
+			<h3 id="question"></h3>
+			<input type="radio" name="option" id="option0" value="10" ><span id="option0text"></span><br>
+			<input type="radio" name="option" id="option1" value="10" ><span id="option1text"></span><br>
+			<input type="radio" name="option" id="option2" value="10" ><span id="option2text"></span><br>
+			<input type="radio" name="option" id="option3" value="10" ><span id="option3text"></span><br>
+			<!-- <button class="submitAnswer">Next</button> -->
+			<button id="nextButton">Next</button>
+			
+		</div> 
+
+			<button id="resultButton">What type of climber am I?</button>
+
+		<div class= "climbingRookie">
+			<h3>You're a Climbing Rookie!</h3>
+			<img src="climbingRookie.jpg">
+			<p>You've probably never climbed before, have done it once or twice, or just started climbing and have a very limited knowledge of climbing lingo. You still have way to go to be a stone master!!! </p>
+		</div>
+		<div class="gymRat">
+			<h3>You're a Gym Rat!</h3>
+			<img src="gymRat2.jpg">
+			<p>You are in LOVE with climbing gyms but you never go out. You either consider climbing a way to get fit or you don't have enough time to get outdoors. Gym rats usually have a limited knowledge of climbing lingo, except for the rare, rare cases where ocassional climbers or stone masters become gym rats. </p>
+		</div>
+		<div class="ocassional">
+			<h3>You're an Ocassional Climber</h3>
+			<img src="ocassional.jpg">
+			<p>You really like climbing. However, you go climbing outdoors once every month or less often. You go to the gym more regularly, but can't seem to get it into your schedule as much as you wished. You have a very descent knowledge of climbing lingo, but are still not familiar with some terms. Go climbing more often and you'll be a Stone Master in no time!!! </p>
+		</div>
+		<div class="master">
+			<h3>You're a Stone Master!</h3>
+			<img src="stoneMaster3.jpg">
+			<p>Wow! Not much to say here. You know your stuff and you LOVE climbing!</p>
+		</div>
+
+		<button id="newQuiz">Take the quiz again</button>
+
+			<!-- <form id="questionContainer">
+				<input type="text" id="question" > -->
+			
+		<div class= "tally">
+      		<p>Question number <span id="count"> 0</span>!</p>
+
+      		<p>CurrentScore <span id="score"> 0</span>!</p>
+      	</div>
+			
+			<ul id="questionNumberList" class="guessBox clearfix">
+
+			</ul>
+
+		</section>
+		<!-- JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
+
+</body>
+</html>
